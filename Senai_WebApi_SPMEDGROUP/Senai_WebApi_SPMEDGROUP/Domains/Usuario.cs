@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Senai_WebApi_SPMEDGROUP.Domains
 {
-    public partial class Usuario
+    public partial class ViewModels
     {
-        public Usuario()
+        public ViewModels()
         {
             Medico = new HashSet<Medico>();
             Paciente = new HashSet<Pacientes>();

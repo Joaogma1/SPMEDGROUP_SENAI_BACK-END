@@ -19,7 +19,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
         public string Cpf { get; set; }
         public string Endereco { get; set; }
 
-        public Usuario IdUsuarioNavigation { get; set; }
+        public ViewModels IdUsuarioNavigation { get; set; }
         public ICollection<Consulta> Consulta { get; set; }
     }
 }

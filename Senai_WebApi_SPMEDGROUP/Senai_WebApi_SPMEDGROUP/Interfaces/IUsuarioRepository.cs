@@ -1,4 +1,5 @@
 ﻿using Senai_WebApi_SPMEDGROUP.Domains;
+using Senai_WebApi_SPMEDGROUP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Senai_WebApi_SPMEDGROUP.Interfaces
         /// Cadastra um novo usuário
         /// </summary>
         /// <param name="usuario">UsuarioDomain</param>
-        void Cadastrar(Usuario usuario);
+        void Cadastrar(Domains.ViewModels usuario);
 
         /// <summary>
         /// 
@@ -20,7 +21,7 @@ namespace Senai_WebApi_SPMEDGROUP.Interfaces
         /// <param name="email"></param>
         /// <param name="senha"></param>
         /// <returns></returns>
-        Usuario BuscarPorEmailSenha(string email, string senha);
+        LoginViewModel BuscarPorEmailSenha(LoginViewModel Login);
 
 
     }

@@ -22,13 +22,12 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
         public virtual DbSet<Medico> Medico { get; set; }
         public virtual DbSet<Pacientes> Paciente { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<ViewModels> Usuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=.\\SqlExpress; Initial Catalog=SPMEDGROUP; user id = sa; password = 132");
             }
         }
@@ -245,7 +244,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Usuario>(entity =>
+            modelBuilder.Entity<ViewModels>(entity =>
             {
                 entity.ToTable("usuario");
 

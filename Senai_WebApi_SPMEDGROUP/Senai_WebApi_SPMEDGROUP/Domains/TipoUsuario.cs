@@ -7,12 +7,12 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
     {
         public TipoUsuario()
         {
-            Usuario = new HashSet<Usuario>();
+            Usuario = new HashSet<ViewModels>();
         }
 
         public int Id { get; set; }
         public string Tipo { get; set; }
 
-        public ICollection<Usuario> Usuario { get; set; }
+        public ICollection<ViewModels> Usuario { get; set; }
     }
 }
