@@ -19,7 +19,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
 
         public Clinica IdClinicaNavigation { get; set; }
         public Especialidade IdEspecialidadeNavigation { get; set; }
-        public ViewModels IdUsuarioNavigation { get; set; }
+        public Usuario IdUsuarioNavigation { get; set; }
         public ICollection<Consulta> Consulta { get; set; }
     }
 }

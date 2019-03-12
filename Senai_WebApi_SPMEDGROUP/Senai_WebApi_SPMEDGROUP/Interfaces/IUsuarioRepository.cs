@@ -13,15 +13,15 @@ namespace Senai_WebApi_SPMEDGROUP.Interfaces
         /// Cadastra um novo usuário
         /// </summary>
         /// <param name="usuario">UsuarioDomain</param>
-        void Cadastrar(Domains.ViewModels usuario);
+        void Cadastrar(Domains.Usuario usuario);
 
         /// <summary>
-        /// 
+        /// Busca usuario usando Email e senha
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="senha"></param>
-        /// <returns></returns>
-        LoginViewModel BuscarPorEmailSenha(LoginViewModel Login);
+        /// <param name="email">Email Usuario</param>
+        /// <param name="senha">Senha Usuario</param>
+        /// <returns>Retorna dados do usuario</returns>
+        Usuario BuscarPorEmailSenha(string Email, string Senha);
 
 
     }

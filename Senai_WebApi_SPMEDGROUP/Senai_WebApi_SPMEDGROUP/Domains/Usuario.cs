@@ -2,9 +2,9 @@
 
 namespace Senai_WebApi_SPMEDGROUP.Domains
 {
-    public partial class ViewModels
+    public partial class Usuario
     {
-        public ViewModels()
+        public Usuario()
         {
             Medico = new HashSet<Medico>();
             Paciente = new HashSet<Pacientes>();
@@ -14,6 +14,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
         public int IdTipoUsuario { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+
 
         public TipoUsuario IdTipoUsuarioNavigation { get; set; }
         public ICollection<Medico> Medico { get; set; }

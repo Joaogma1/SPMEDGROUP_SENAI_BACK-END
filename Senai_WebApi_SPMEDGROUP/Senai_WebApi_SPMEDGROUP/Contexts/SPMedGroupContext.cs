@@ -22,7 +22,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
         public virtual DbSet<Medico> Medico { get; set; }
         public virtual DbSet<Pacientes> Paciente { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public virtual DbSet<ViewModels> Usuario { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -244,7 +244,7 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<ViewModels>(entity =>
+            modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.ToTable("usuario");
 
