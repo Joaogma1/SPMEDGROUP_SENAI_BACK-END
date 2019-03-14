@@ -25,9 +25,9 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             ConsultaRepository = new ConsultaRepository();
         }
 
-        [Authorize(Roles = "1,2")]
+        [Authorize(Roles = "1,2,3")]
         [HttpGet]
-        [Route("Mine")]
+        [Route("User")]
         public IActionResult ListarPorUsuario()
         {
             try
@@ -56,6 +56,10 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
 
                         return Ok(ConsultaRepository.ListarConsultasMedico(MedicoLogado.Id));
                     }
+                }
+                else if (TipoDeUsuarioId == 3)
+                {
+                    return Ok(ConsultaRepository.ListarTodasConsulta());
                 }
                 else
                 {
