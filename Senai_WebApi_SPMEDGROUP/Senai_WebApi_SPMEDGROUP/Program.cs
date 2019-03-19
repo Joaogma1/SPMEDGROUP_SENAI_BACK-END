@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Senai_WebApi_SPMEDGROUP.Domains;
+using Senai_WebApi_SPMEDGROUP.Interfaces;
+using Senai_WebApi_SPMEDGROUP.Repositories;
 using Microsoft.Extensions.Logging;
 
 namespace Senai_WebApi_SPMEDGROUP

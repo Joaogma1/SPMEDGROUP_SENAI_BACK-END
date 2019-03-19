@@ -25,7 +25,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             ConsultaRepository = new ConsultaRepository();
         }
 
-        [Authorize(Roles = "1,2,3")]
+        [Authorize(Roles = "paciente,medico,administrador")]
         [HttpGet]
         [Route("User")]
         public IActionResult ListarPorUsuario()
@@ -37,7 +37,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                 int TipoDeUsuarioId = Convert.ToInt32(HttpContext.User.Claims.First
                     (c => c.Type == ClaimTypes.Role).Value);
                 //Verifica se é do tipo paciente
-                if (TipoDeUsuarioId == 1)
+                if (TipoDeUsuarioId.Equals("paciente") )
                 {
                     using (SPMedGroupContext ctx = new SPMedGroupContext())
                     {
@@ -47,7 +47,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                         return Ok(ConsultaRepository.ListarConsultasPaciente(pacienteLogado.Id));
                     }
                 }
-                else if (TipoDeUsuarioId == 2)
+                else if (TipoDeUsuarioId.Equals("medico"))
                 {
                     using (SPMedGroupContext ctx = new SPMedGroupContext())
                     {
@@ -57,7 +57,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                         return Ok(ConsultaRepository.ListarConsultasMedico(MedicoLogado.Id));
                     }
                 }
-                else if (TipoDeUsuarioId == 3)
+                else if (TipoDeUsuarioId.Equals("administrador"))
                 {
                     return Ok(ConsultaRepository.ListarTodasConsulta());
                 }
@@ -79,7 +79,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// </summary>
         /// <param name="DadosConsulta">Dados da consulta</param>
         /// <returns>Void tem retorno ?</returns>
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "administrador")]
         [HttpPost]
         public IActionResult Post(Consulta DadosConsulta)
         {
@@ -101,7 +101,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// <param name="Id"> Id do paciente que as consultas serao buscadas</param>
         /// <returns>Retorna Uma lista de consultas de determinado Paciente</returns>
         [HttpGet("Paciente/{Id}")]
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "administrador")]
         public IActionResult getConsultas(int Id)
         {
             try
@@ -122,7 +122,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// <param name="Id">Id do medico consultado</param>
         /// <returns>Retorna Uma lista de consultas de determinado Medico</returns>
         [HttpGet("Medico/{Id}")]
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "administrador")]
         public IActionResult getMedicos(int Id)
         {
             try
@@ -140,7 +140,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// </summary>
         /// <returns> Retorna uma lista com todas as consultas</returns>
         [HttpGet]
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "administrador")]
         public IActionResult Get()
         {
             try
