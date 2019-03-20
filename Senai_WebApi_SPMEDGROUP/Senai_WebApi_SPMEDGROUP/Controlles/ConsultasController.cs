@@ -34,7 +34,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             {
                 int UsuarioId = Convert.ToInt32(HttpContext.User.Claims.First
                     (c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                int TipoDeUsuarioId = Convert.ToInt32(HttpContext.User.Claims.First
+                String TipoDeUsuarioId = (HttpContext.User.Claims.First
                     (c => c.Type == ClaimTypes.Role).Value);
                 //Verifica se é do tipo paciente
                 if (TipoDeUsuarioId.Equals("paciente") )
