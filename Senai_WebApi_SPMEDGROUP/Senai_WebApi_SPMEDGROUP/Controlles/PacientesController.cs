@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai_WebApi_SPMEDGROUP.Interfaces;
@@ -22,7 +23,8 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         }
 
         [HttpGet]
-        public  IActionResult get()
+        [Authorize(Roles = "administrador")]
+                public IActionResult get()
         {
             try
             {

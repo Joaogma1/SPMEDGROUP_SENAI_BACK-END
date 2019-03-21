@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai_WebApi_SPMEDGROUP.Interfaces;
 using Senai_WebApi_SPMEDGROUP.Repositories;
 
@@ -17,6 +18,8 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             MedicosRepository = new MedicoRepository();
         }
         [HttpGet]
+        [Authorize(Roles = "administrador")]
+
         public IActionResult get()
         {
             try
