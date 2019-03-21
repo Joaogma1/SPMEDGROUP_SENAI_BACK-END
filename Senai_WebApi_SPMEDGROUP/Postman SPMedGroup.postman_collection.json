@@ -1,0 +1,103 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Postman SPMedGroup",
+		"_postman_id": "1ed09150-ecd0-fcad-d084-1edb6fd82929",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enviar Consulta",
+			"request": {
+				"url": "",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTUyNTkwOTMwLCJpc3MiOiJTUE1lZEdyb3VwLldlYkFwaSIsImF1ZCI6IlNQTWVkR3JvdXAuV2ViQXBpIn0.KGcfCCiAPvGFsuHBA0b7Q52VbiYn-ATvWj9_b3Em0qk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idPaciente\":1 \r\n  \"idMedico\": 25,\r\n  \"dataConsulta\": \"2019-03-14T17:09:49.433Z\",\r\n  \"statusConsulta\": \"Em aguardo\",\r\n  \"descricao\": \"ainda não realizada\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Ver minhas consultas",
+			"request": {
+				"url": "http://localhost:5000/api/Consultas/Usuario",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJwYWNpZW50ZSIsImV4cCI6MTU1MzIwMjE3NywiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.bHlYxDXIJVe_KXiFEk4Ho18Ce0MPlvFCHsjyzGB9uKs",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"ligia@gmail.com\",\n\t\"senha\": \"123\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:5000/api/Login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"EMail\" : \"ligia@gmail.com\",\n        \"Senha\" : \"123\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetMedicos",
+			"request": {
+				"url": "http://localhost:5000/api/Medicos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pacientes",
+			"request": {
+				"url": "http://localhost:5000/api/Pacientes",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
