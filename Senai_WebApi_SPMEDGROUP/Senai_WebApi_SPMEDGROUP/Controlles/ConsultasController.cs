@@ -27,7 +27,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
 
         [Authorize(Roles = "paciente,medico,administrador")]
         [HttpGet]
-        [Route("User")]
+        [Route("Usuario")]
         public IActionResult ListarPorUsuario()
         {
             try
