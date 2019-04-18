@@ -25,7 +25,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             ConsultaRepository = new ConsultaRepository();
         }
 
-        [Authorize(Roles = "paciente,medico,administrador")]
+        [Authorize]
         [HttpGet]
         [Route("Usuario")]
         public IActionResult ListarPorUsuario()

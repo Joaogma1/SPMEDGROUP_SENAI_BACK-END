@@ -21,14 +21,15 @@ namespace Senai_WebApi_SPMEDGROUP
             {
                 c.SwaggerDoc("v1", new Info { Title = "SPMedGroup", Version = "v1" });
             });
-            
+
             services.AddMvc()
                 .AddJsonOptions(options =>
                 {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 })
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
-            
+
             ///
             ///   Adiciona como ira funcionar o auth
             ///
@@ -55,6 +56,14 @@ namespace Senai_WebApi_SPMEDGROUP
                     ValidAudience = "SPMedGroup.WebApi"
                 };
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -66,7 +75,7 @@ namespace Senai_WebApi_SPMEDGROUP
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SPMedGroup API");
             });
-
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseMvc();
         }
     }

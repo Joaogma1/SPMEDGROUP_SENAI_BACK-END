@@ -40,6 +40,8 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                 var claims = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Email, Usuario.Email),
+                    new Claim("Role", Usuario.IdTipoUsuarioNavigation.Tipo.ToString()),
+                    new Claim("idUsuario", Usuario.Id.ToString()),
                     new Claim(JwtRegisteredClaimNames.Jti, Usuario.Id.ToString()),
                     new Claim(ClaimTypes.Role, Usuario.IdTipoUsuarioNavigation.Tipo.ToString())
                 };

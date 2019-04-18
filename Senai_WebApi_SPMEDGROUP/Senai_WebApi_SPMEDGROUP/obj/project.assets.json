@@ -12752,11 +12752,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\00836578279\\Desktop\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP.csproj",
+      "projectUniqueName": "C:\\Users\\00836578279\\Desktop\\FrontEnd-SPMedGroup\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP.csproj",
       "projectName": "Senai_WebApi_SPMEDGROUP",
-      "projectPath": "C:\\Users\\00836578279\\Desktop\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP.csproj",
+      "projectPath": "C:\\Users\\00836578279\\Desktop\\FrontEnd-SPMedGroup\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP.csproj",
       "packagesPath": "C:\\Users\\00836578279\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\00836578279\\Desktop\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\obj\\",
+      "outputPath": "C:\\Users\\00836578279\\Desktop\\FrontEnd-SPMedGroup\\SPMEDGROUP_SENAI_BACK-END_DataBaseFirst\\Senai_WebApi_SPMEDGROUP\\Senai_WebApi_SPMEDGROUP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
