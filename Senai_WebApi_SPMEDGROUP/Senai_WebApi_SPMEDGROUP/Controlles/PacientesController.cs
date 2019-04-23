@@ -23,7 +23,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         }
 
         [HttpGet]
-        [Authorize(Roles = "administrador")]
+        [Authorize]
                 public IActionResult get()
         {
             try

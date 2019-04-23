@@ -79,7 +79,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// </summary>
         /// <param name="DadosConsulta">Dados da consulta</param>
         /// <returns>Void tem retorno ?</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Consulta DadosConsulta)
         {
@@ -101,7 +101,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// <param name="Id"> Id do paciente que as consultas serao buscadas</param>
         /// <returns>Retorna Uma lista de consultas de determinado Paciente</returns>
         [HttpGet("Paciente/{Id}")]
-        [Authorize(Roles = "administrador")]
+        [Authorize]
         public IActionResult getConsultas(int Id)
         {
             try
@@ -122,7 +122,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// <param name="Id">Id do medico consultado</param>
         /// <returns>Retorna Uma lista de consultas de determinado Medico</returns>
         [HttpGet("Medico/{Id}")]
-        [Authorize(Roles = "administrador")]
+        [Authorize]
         public IActionResult getMedicos(int Id)
         {
             try
@@ -140,7 +140,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         /// </summary>
         /// <returns> Retorna uma lista com todas as consultas</returns>
         [HttpGet]
-        [Authorize(Roles = "administrador")]
+        [Authorize]
         public IActionResult Get()
         {
             try

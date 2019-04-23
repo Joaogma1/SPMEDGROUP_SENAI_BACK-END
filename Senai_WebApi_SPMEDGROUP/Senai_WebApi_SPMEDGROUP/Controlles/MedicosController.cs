@@ -18,7 +18,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
             MedicosRepository = new MedicoRepository();
         }
         [HttpGet]
-        [Authorize(Roles = "administrador")]
+        [Authorize]
 
         public IActionResult get()
         {
