@@ -22,6 +22,11 @@ namespace Senai_WebApi_SPMEDGROUP.Repositories
                 //// var s = new SqlParameter("@Senha", Senha);
 
                 Usuario UsuarioBuscado = ctx.Usuario.Include(x => x.IdTipoUsuarioNavigation).Where(x => x.Email == Email && x.Senha == Senha).FirstOrDefault();
+                if(UsuarioBuscado == null)
+                {
+                    return null;
+                }
+
                 UsuarioBuscado.Senha = null;
                 return UsuarioBuscado;
             }
