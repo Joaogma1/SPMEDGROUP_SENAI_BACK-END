@@ -37,14 +37,20 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                     return NotFound();
                 }
 
-                var claims = new[]
+                var claims = new List<Claim>()
                 {
                     new Claim(JwtRegisteredClaimNames.Email, Usuario.Email),
                     new Claim("Role", Usuario.IdTipoUsuarioNavigation.Tipo.ToString()),
                     new Claim("idUsuario", Usuario.Id.ToString()),
                     new Claim(JwtRegisteredClaimNames.Jti, Usuario.Id.ToString()),
-                    new Claim(ClaimTypes.Role, Usuario.IdTipoUsuarioNavigation.Tipo.ToString())
+                    new Claim(ClaimTypes.Role, Usuario.IdTipoUsuarioNavigation.Tipo.ToString()),
                 };
+
+                //if (Usuario.IdTipoUsuarioNavigation.Equals("medico"))
+                //{
+                //    claims.Add(new Claim("Especialidade", Usuario.IdEspecialidadeNavigation.Nome.ToString()));
+                //}
+
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SPMedGroup-Auth-key"));
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -61,7 +67,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
             }
-            catch 
+            catch (Exception e)
             {
                 return BadRequest();
             }

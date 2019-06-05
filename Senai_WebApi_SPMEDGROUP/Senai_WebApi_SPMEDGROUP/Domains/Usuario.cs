@@ -15,7 +15,6 @@ namespace Senai_WebApi_SPMEDGROUP.Domains
         public string Email { get; set; }
         public string Senha { get; set; }
 
-
         public TipoUsuario IdTipoUsuarioNavigation { get; set; }
         public ICollection<Medico> Medico { get; set; }
         public ICollection<Pacientes> Paciente { get; set; }

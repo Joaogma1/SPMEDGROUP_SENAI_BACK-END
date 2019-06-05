@@ -32,11 +32,14 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         {
             try
             {
-                int UsuarioId = Convert.ToInt32(HttpContext.User.Claims.First
+                int UsuarioId = Convert.ToInt32(HttpContext.User.Claims.FirstOrDefault
                     (c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
                 String TipoDeUsuarioId = (HttpContext.User.Claims.First
                     (c => c.Type == ClaimTypes.Role).Value);
+
                 //Verifica se é do tipo paciente
+
                 if (TipoDeUsuarioId.Equals("paciente") )
                 {
                     using (SPMedGroupContext ctx = new SPMedGroupContext())
@@ -67,7 +70,7 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
                 }
             }
 
-            catch 
+            catch (Exception ex)
             {
 
                 return BadRequest();
