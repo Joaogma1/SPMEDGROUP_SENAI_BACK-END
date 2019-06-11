@@ -26,6 +26,30 @@ namespace Senai_WebApi_SPMEDGROUP.Controlles
         }
 
         [Authorize]
+        [HttpPut("situacao/{id}")]
+        public IActionResult AtualizarConsulta(Consulta consulta, int id)
+        {
+            try
+            {
+                Consulta ConsultaBuscada = ConsultaRepository.BuscarPorId(id);
+
+                if (ConsultaBuscada == null)
+                {
+                    return NotFound();
+                }
+
+                ConsultaBuscada.Descricao= consulta.Descricao;
+                ConsultaRepository.AtualizarConsulta(ConsultaBuscada);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [Authorize]
         [HttpGet]
         [Route("Usuario")]
         public IActionResult ListarPorUsuario()

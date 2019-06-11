@@ -33,5 +33,9 @@ namespace Senai_WebApi_SPMEDGROUP.Interfaces
         /// <param name="Id">Id do Medico</param>
         /// <returns>Retorna Lista de Consultas de um determinado Medico</returns>
         List<Consulta> ListarConsultasMedico(int Id);
+
+        Consulta BuscarPorId(int id);
+
+        void AtualizarConsulta(Consulta dadosConsulta);
     }
 }

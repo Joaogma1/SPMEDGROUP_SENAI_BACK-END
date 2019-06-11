@@ -10,6 +10,23 @@ namespace Senai_WebApi_SPMEDGROUP.Repositories
 {
     public class ConsultaRepository : IConsultaRepository
     {
+        public void AtualizarConsulta(Consulta dadosConsulta)
+        {
+            using (SPMedGroupContext ctx = new SPMedGroupContext())
+            {
+                ctx.Consulta.Update(dadosConsulta);
+                ctx.SaveChanges();
+            }
+        }
+
+        public Consulta BuscarPorId(int id)
+        {
+            using (SPMedGroupContext ctx = new SPMedGroupContext())
+            {
+                return ctx.Consulta.Find(id);
+            }
+        }
+
         public void cadastrarConsulta(Consulta DadosConsulta)
         {
             using (SPMedGroupContext ctx = new SPMedGroupContext())
